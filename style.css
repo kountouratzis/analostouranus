@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.main-menu {
+    height: 80px;
+    background-color: #fbcc7c;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-menu ul {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.main-menu a {
+    color: #140f1b;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.main-menu .bold {
+    font-weight: 600;
+    color: #044b61;
+}
+
+/* Buy Now Button Styles */
+.buy-button {
+    background-color: #e04c01 !important;
+    color: white !important;
+    font-size: 16px !important;
+    padding: 10px 15px !important;
+    border-radius: 90px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #033747 !important;
+}
+
+.social-icon {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.main-content {
+    background-image: url('analos_to_uranus.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+    .main-menu ul {
+        justify-content: center;
+        padding: 10px;
+    }
+    
+    .main-menu a {
+        font-size: 14px;
+    }
+    
+    .buy-button {
+        font-size: 16px !important;
+        padding: 8px 12px !important;
+    }
+}
