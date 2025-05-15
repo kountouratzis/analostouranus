@@ -9,23 +9,26 @@ body {
 }
 
 .main-menu {
-    height: 80px;
+    min-height: 80px; /* Changed to min-height */
     background-color: #fbcc7c;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center; /* Vertical centering */
 }
 
 .main-menu ul {
     list-style: none;
-    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 20px 30px 20px 30px; /* Top, Right, Bottom, Left */
+    min-height: 80px; /* Minimum menu height */
 }
 
 .main-menu a {
@@ -37,24 +40,44 @@ body {
     white-space: nowrap;
 }
 
-.main-menu .bold {
-    font-weight: 600;
-    color: #044b61;
+/* Desktop padding */
+@media (min-width: 769px) {
+    .main-menu ul {
+        padding: 20px 30px 20px 30px;
+    }
 }
 
-/* Buy Now Button Styles */
+/* Mobile padding */
+@media (max-width: 768px) {
+    .main-menu ul {
+        padding: 20px 20px 20px 20px;
+        gap: 8px;
+    }
+    
+    .main-menu a {
+        font-size: 14px;
+    }
+    
+    .buy-button {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+/* Rest of existing CSS remains the same */
 .buy-button {
-    background-color: #e04c01 !important;
+    background-color: #044b61;
     color: white !important;
-    font-size: 16px !important;
-    padding: 10px 15px !important;
+    font-size: 18px;
+    padding: 10px 15px;
     border-radius: 90px;
     text-transform: uppercase;
     transition: background-color 0.3s;
+    display: inline-block;
 }
 
 .buy-button:hover {
-    background-color: #033747 !important;
+    background-color: #033747;
 }
 
 .social-icon {
@@ -68,20 +91,4 @@ body {
     background-position: center;
     height: calc(100vh - 80px);
     margin-top: 80px;
-}
-
-@media (max-width: 768px) {
-    .main-menu ul {
-        justify-content: center;
-        padding: 10px;
-    }
-    
-    .main-menu a {
-        font-size: 14px;
-    }
-    
-    .buy-button {
-        font-size: 16px !important;
-        padding: 8px 12px !important;
-    }
 }
